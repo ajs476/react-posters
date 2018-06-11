@@ -81,7 +81,7 @@
 
 .movieSearch {
   text-align: center;
-  width: 100%;
+  width: %;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -91,13 +91,14 @@
   padding: 10px;
   border: 1px solid grey;
   border-radius: 4px 0px 0px 4px;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .movieSearchButton{
+  width: 10%;
   padding: 10px;
   border: 1px solid grey;
   border-radius: 0px 4px 4px 0px;
-  font-size: 1.2em;
+  font-size: 1em;
   background: dodgerblue;
   color: white;
 }
