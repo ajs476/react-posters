@@ -54,6 +54,7 @@
     float: left;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding: 10px;
   }
   .column.full {
     width: 100%;
@@ -75,6 +76,14 @@
   }
   .column.flow-opposite {
     float: right;
+  }
+}
+
+@media (max-width: 650px) {
+  .column {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px;
   }
 }
 
