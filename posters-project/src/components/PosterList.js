@@ -1,12 +1,11 @@
 import React from 'react';
 import Poster from './Poster.js';
-import posterData from '../data/poster-data.json';
 
 
-const PosterList = () => (
+const PosterList = ({movieList}) => (
   <div>
     {
-      posterData.map(({title, genre, posterImageURL, userImageURL}, i) =>
+      movieList.map(({title, genre, posterImageURL, userImageURL}, i) =>
       <Poster
         title={title}
         genre={genre}
