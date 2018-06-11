@@ -6,27 +6,57 @@
     "userImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg"
   },
   {
-    "title":"DeadPool",
-    "genre":"Action / Comedy",
-    "posterImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg",
-    "userImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg"
+    "title":"Archer",
+    "genre":"Animated / Comedy",
+    "posterImageURL":"https://images-na.ssl-images-amazon.com/images/I/518C7B%2BHCeL.jpg",
+    "userImageURL":"https://images-na.ssl-images-amazon.com/images/I/518C7B%2BHCeL.jpg"
   },
   {
-    "title":"DeadPool",
-    "genre":"Action / Comedy",
-    "posterImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg",
-    "userImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg"
+    "title":"The Martian",
+    "genre":"Sci-Fi",
+    "posterImageURL":"http://static.hd-trailers.net/images/the-martian-104112-poster-xlarge-resized.jpg",
+    "userImageURL":"http://static.hd-trailers.net/images/the-martian-104112-poster-xlarge-resized.jpg"
   },
   {
-    "title":"DeadPool",
-    "genre":"Action / Comedy",
-    "posterImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg",
-    "userImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg"
+    "title":"Arrow",
+    "genre":"Action",
+    "posterImageURL":"https://i1.wp.com/gledaiseriali.net/wp-content/uploads/2016/05/strelata_sezon_1_bg_audio.jpg?fit=890%2C1199&ssl=1",
+    "userImageURL":"https://i1.wp.com/gledaiseriali.net/wp-content/uploads/2016/05/strelata_sezon_1_bg_audio.jpg?fit=890%2C1199&ssl=1"
   },
   {
-    "title":"DeadPool",
-    "genre":"Action / Comedy",
-    "posterImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg",
-    "userImageURL":"https://i.pinimg.com/originals/1a/70/6e/1a706e0021180f77cf766c219319045f.jpg"
+    "title":"Central Intelligence",
+    "genre":"Comedy / Crime",
+    "posterImageURL":"https://images-na.ssl-images-amazon.com/images/I/51gwbO04ZDL.jpg",
+    "userImageURL":"https://images-na.ssl-images-amazon.com/images/I/51gwbO04ZDL.jpg"
+  },
+  {
+    "title":"Ajin",
+    "genre":"Anime / Action",
+    "posterImageURL":"https://i.ebayimg.com/images/g/NfAAAOSwHxVW8MQy/s-l300.jpg",
+    "userImageURL":"https://i.ebayimg.com/images/g/NfAAAOSwHxVW8MQy/s-l300.jpg"
+  },
+  {
+    "title":"Attack On Titan",
+    "genre":"Anime / Action",
+    "posterImageURL":"https://imgc.allpostersimages.com/img/posters/attack-on-titan_u-L-F7ONOP0.jpg?src=gp&w=300&h=375",
+    "userImageURL":"https://imgc.allpostersimages.com/img/posters/attack-on-titan_u-L-F7ONOP0.jpg?src=gp&w=300&h=375"
+  },
+  {
+    "title":"Sword Art Online",
+    "genre":"Anime / Adventure",
+    "posterImageURL":"https://images-na.ssl-images-amazon.com/images/I/51Eidk0kRxL.jpg",
+    "userImageURL":"https://images-na.ssl-images-amazon.com/images/I/51Eidk0kRxL.jpg"
+  },
+  {
+    "title":"Doctor Who",
+    "genre":"Sci-Fi",
+    "posterImageURL":"https://imgc.allpostersimages.com/img/posters/doctor-who-tardis-metallic-poster_u-L-F54Y0K0.jpg?src=gp&w=300&h=375",
+    "userImageURL":"https://imgc.allpostersimages.com/img/posters/doctor-who-tardis-metallic-poster_u-L-F54Y0K0.jpg?src=gp&w=300&h=375"
+  },
+  {
+    "title":"Game of Thrones",
+    "genre":"Drama",
+    "posterImageURL":"https://cdn.europosters.eu/image/750/posters/game-of-thrones-hall-of-faces-i30266.jpg",
+    "userImageURL":"https://cdn.europosters.eu/image/750/posters/game-of-thrones-hall-of-faces-i30266.jpg"
   }
 ]

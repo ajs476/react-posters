@@ -2,7 +2,7 @@ import React from 'react';
 import Poster from './Poster.js';
 import posterData from '../data/poster-data.json';
 
-const PosterRow = () => (
+const PosterList = () => (
   <div>
     {
       posterData.map(({title, genre, posterImageURL, userImageURL}, i) =>
@@ -18,4 +18,4 @@ const PosterRow = () => (
   </div>
 );
 
-export default PosterRow;
+export default PosterList;

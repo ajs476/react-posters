@@ -1,17 +1,10 @@
 import React from 'react';
-import PosterRow from './components/PosterRow.js';
+import PosterList from './components/PosterList.js';
 
 const App = () => (
-<div>
   <section className="container">
-    <div className="row clearfix">
-        <PosterRow />
-    </div>
-    <div className="row clearfix">
-        <PosterRow />
-    </div>
+        <PosterList />
   </section>
-</div>
 );
 
 export default App;
