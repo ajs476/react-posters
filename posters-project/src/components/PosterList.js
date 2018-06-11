@@ -2,6 +2,7 @@ import React from 'react';
 import Poster from './Poster.js';
 import posterData from '../data/poster-data.json';
 
+
 const PosterList = () => (
   <div>
     {
@@ -17,5 +18,6 @@ const PosterList = () => (
     }
   </div>
 );
+
 
 export default PosterList;

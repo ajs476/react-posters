@@ -79,6 +79,29 @@
   }
 }
 
+.movieSearch {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.movieSearchBox{
+  width: 90%;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 4px 0px 0px 4px;
+  font-size: 1.2em;
+}
+.movieSearchButton{
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 0px 4px 4px 0px;
+  font-size: 1.2em;
+  background: dodgerblue;
+  color: white;
+}
+
 @media (max-width: 650px) {
   .column {
     margin-left: 100px;
