@@ -13,9 +13,7 @@ class App extends React.Component {
       movies: posterData,
       inputValue: '',
     };
-    this.updateMovies = this.updateMovies.bind(this);
     this.updateInputValue = this.updateInputValue.bind(this);
-    this.searchOMDB = this.searchOMDB.bind(this);
   }
 
   updateMovies(results) {
