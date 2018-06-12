@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   updateMovies(results) {
-    this.setState({movies: [results, ...posterData]});
+    this.setState({movies: results});
   }
 
   updateInputValue(changeEvent) {
@@ -27,10 +27,14 @@ class App extends React.Component {
   }
 
   searchOMDB(searchTitle) {
-    qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&t=${searchTitle}`)
+    qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
     .then((results) => {
       let omdbResult = JSON.parse(results);
-      this.updateMovies({title: omdbResult.Title, genre: omdbResult.Genre, posterImageURL: omdbResult.Poster, userImageURL: omdbResult.Poster});
+      let resultArr = [];
+      for (let {Title: title, Year: genre, Poster: posterImageURL} of omdbResult.Search) {
+        resultArr.push({title: title, genre: genre, posterImageURL: posterImageURL, userImageURL: posterImageURL});
+      }
+      this.updateMovies(resultArr);
     })
     .then(null, Error)
     .done();
