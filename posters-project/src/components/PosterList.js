@@ -5,13 +5,13 @@ import Poster from './Poster.js';
 const PosterList = ({movieList}) => (
   <div>
     {
-      movieList.map(({title, genre, posterImageURL, userImageURL}, i) =>
+      movieList.map(({title, genre, posterImageURL, userImageURL}, index) =>
       <Poster
         title={title}
         genre={genre}
         posterImageURL={posterImageURL}
         userImageURL={userImageURL}
-        key={i}
+        key={index}
         >
       </Poster>)
     }

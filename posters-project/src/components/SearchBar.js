@@ -9,6 +9,7 @@ class SearchBar extends React.Component {
       inputValue: '',
     };
     this.searchOMDB = this.searchOMDB.bind(this);
+    this.updateInputValue = this.updateInputValue.bind(this);
   }
 
   updateInputValue(changeEvent) {
@@ -35,9 +36,7 @@ class SearchBar extends React.Component {
     return (
       <div className="movieSearch">
         <input className="movieSearchBox" type="text" placeholder="Lookup Movie on OMDb..." value={this.state.inputValue}
-          onChange={ (changeEvent) =>
-            this.updateInputValue(changeEvent)
-          }>
+          onChange={ this.updateInputValue }>
         </input>
         <button className="movieSearchButton" onClick={() => this.searchOMDB(this.state.inputValue)}>Search</button>
       </div>
