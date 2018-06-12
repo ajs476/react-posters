@@ -20,6 +20,7 @@ module.exports = {
     "react/no-multi-comp": 0,
     "import/no-duplicates": 0,
     "import/first": 0,
-    "max-len": 0
+    "max-len": 0,
+    "require-jsdoc": 0,
   }
 };
