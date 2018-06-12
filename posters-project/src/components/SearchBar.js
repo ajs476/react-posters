@@ -22,11 +22,7 @@ class SearchBar extends React.Component {
     qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&t=${searchTitle}`)
     .then((results) => {
       let omdbResult = JSON.parse(results);
-      let title = omdbResult.Title;
-      let genre = omdbResult.Genre;
-      let posterImageURL = omdbResult.Poster;
-      let userImageURL = omdbResult.Poster;
-      this.props.updateMovies({title, genre, posterImageURL, userImageURL});
+      this.props.updateMovies({title: omdbResult.Title, genre: omdbResult.Genre, posterImageURL: omdbResult.Poster, userImageURL: omdbResult.Poster});
     })
     .then(null, Error)
     .done();
@@ -37,7 +33,7 @@ class SearchBar extends React.Component {
     return (
       <div className="movieSearch">
         <input className="movieSearchBox" type="text" placeholder="Lookup Movie on OMDb..." value={inputValue}
-          onChange={ this.updateInputValue }>
+          onChange={this.updateInputValue}>
         </input>
         <button className="movieSearchButton" onClick={() => this.searchOMDB(inputValue)}>Search</button>
       </div>
