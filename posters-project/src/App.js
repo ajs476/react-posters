@@ -19,10 +19,11 @@ class App extends React.Component {
   }
 
   render() {
+    const {movies} = this.state;
     return (
     <section className="container">
       <SearchBar updateMovies={this.updateMovies}/>
-      <PosterList movieList={this.state.movies}/>
+      <PosterList movieList={movies}/>
     </section>
   );
   }
