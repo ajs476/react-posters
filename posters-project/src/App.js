@@ -30,14 +30,12 @@ class App extends React.Component {
     qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
     .then((results) => {
       let omdbResult = JSON.parse(results);
-      let resultArr = [];
-      for (let {Title: title, Year: genre, Poster: posterImageURL} of omdbResult.Search) {
-        resultArr.push({title: title, genre: genre, posterImageURL: posterImageURL, userImageURL: posterImageURL});
-      }
-      this.updateMovies(resultArr);
+      let formattedResults = omdbResult.Search.map(({Title: title, Year: genre, Poster: posterImageURL}) =>
+        ({title, genre, posterImageURL, userImageURL: posterImageURL})
+      );
+      this.updateMovies(formattedResults);
     })
-    .then(null, Error)
-    .done();
+    .catch((error) => alert('Error: Something went wrong...'));
   }
 
   render() {

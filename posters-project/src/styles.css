@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: black;
+}
+
 .container {
   margin: 0 auto;
   width: 90%;
@@ -31,6 +35,7 @@
 
 .under-poster-left {
   float: left;
+  max-width: 85%;
 }
 
 .under-poster-right {
@@ -38,8 +43,9 @@
 }
 
 .media-title {
+  color: white;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .media-genre {
