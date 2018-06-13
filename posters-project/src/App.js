@@ -12,12 +12,14 @@ class App extends React.Component {
     this.state = {
       movies: posterData,
       inputValue: '',
+      statusMessage: '',
     };
     this.updateInputValue = this.updateInputValue.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   updateMovies(results) {
-    this.setState({movies: [results, ...posterData]});
+    this.setState({movies: results});
   }
 
   updateInputValue(changeEvent) {
@@ -27,20 +29,36 @@ class App extends React.Component {
   }
 
   searchOMDB(searchTitle) {
-    qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&t=${searchTitle}`)
+    if (searchTitle === '') {
+      this.setState({statusMessage: 'Error: Search term required'});
+      return;
+    }
+    qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
     .then((results) => {
       let omdbResult = JSON.parse(results);
-      this.updateMovies({title: omdbResult.Title, genre: omdbResult.Genre, posterImageURL: omdbResult.Poster, userImageURL: omdbResult.Poster});
+      if (omdbResult.Response === 'False') {
+        this.setState({statusMessage: `Error: ${omdbResult.Error}`});
+        return;
+      }
+      let formattedResults = omdbResult.Search.map(({Title: title, Year: genre, Poster: posterImageURL}) =>
+        ({title, genre, posterImageURL, userImageURL: posterImageURL})
+      );
+      this.setState({statusMessage: ''}, () => this.updateMovies(formattedResults));
     })
-    .then(null, Error)
-    .done();
+    .catch((error) => this.setState({statusMessage: 'Error: Something went wrong. Please try again later.'}));
+  }
+
+  handleSearch() {
+    const {movies, inputValue, statusMessage} = this.state;
+    this.setState({statusMessage: 'Loading'}, () => this.searchOMDB(inputValue));
   }
 
   render() {
-    const {movies, inputValue} = this.state;
+    const {movies, inputValue, statusMessage} = this.state;
     return (
     <section className="container">
-      <SearchBar updateInputValue={this.updateInputValue} onSearch={() => this.searchOMDB(inputValue)} input={inputValue}/>
+      <p className="statusMessage">{statusMessage}</p>
+      <SearchBar updateInputValue={this.updateInputValue} onSearch={this.handleSearch} input={inputValue}/>
       <PosterList movieList={movies}/>
     </section>
   );
