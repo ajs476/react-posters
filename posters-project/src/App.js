@@ -43,8 +43,7 @@ class App extends React.Component {
       let formattedResults = omdbResult.Search.map(({Title: title, Year: genre, Poster: posterImageURL}) =>
         ({title, genre, posterImageURL, userImageURL: posterImageURL})
       );
-      this.updateMovies(formattedResults);
-      this.setState({statusMessage: ''});
+      this.setState({statusMessage: ''}, () => this.updateMovies(formattedResults));
     })
     .catch((error) => this.setState({statusMessage: 'Error: Something went wrong. Please try again later.'}));
   }
