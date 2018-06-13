@@ -8,6 +8,22 @@ body{
   background-color: black;
 }
 
+.searchHistory{
+  color: white;
+  background: dodgerblue;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.searchHistory input{
+  float: right;
+  padding: 4px;
+}
+
+.searchHistory:empty{
+  padding: 0;
+}
+
 .statusMessage{
   color: white;
   text-align: center;

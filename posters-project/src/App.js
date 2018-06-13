@@ -2,6 +2,7 @@ import React from 'react';
 import PosterList from './components/PosterList.js';
 import SearchBar from './components/SearchBar.js';
 import Poster from './components/Poster.js';
+import SearchHistory from './components/SearchHistory';
 import posterData from './data/poster-data.json';
 const qhttp = require('q-io/http');
 
@@ -13,9 +14,11 @@ class App extends React.Component {
       movies: posterData,
       inputValue: '',
       statusMessage: '',
+      searchHistory: [],
     };
     this.updateInputValue = this.updateInputValue.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    localStorage.clear();
   }
 
   updateMovies(results) {
@@ -50,16 +53,18 @@ class App extends React.Component {
   }
 
   handleSearch() {
-    const {movies, inputValue, statusMessage} = this.state;
+    const {movies, inputValue, statusMessage, searchHistory} = this.state;
+    this.setState({searchHistory: [inputValue, ...searchHistory]});
     this.setState({statusMessage: 'Loading'}, () => this.searchOMDB(inputValue));
   }
 
   render() {
-    const {movies, inputValue, statusMessage} = this.state;
+    const {movies, inputValue, statusMessage, searchHistory} = this.state;
     return (
     <section className="container">
       <p className="statusMessage">{statusMessage}</p>
       <SearchBar updateInputValue={this.updateInputValue} onSearch={this.handleSearch} input={inputValue}/>
+      <SearchHistory searchHistory={searchHistory}/>
       <PosterList movieList={movies}/>
     </section>
   );
