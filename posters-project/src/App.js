@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   searchOMDB(searchTitle) {
-    if (searchTitle == '') {
+    if (searchTitle === '') {
       this.setState({statusMessage: 'Error: Search term required'});
       return;
     }
