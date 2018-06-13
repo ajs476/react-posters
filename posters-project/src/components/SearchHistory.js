@@ -1,9 +1,10 @@
 import React from 'react';
 
-const SearchHistory = ({searchHistory}) => (
-  <div className="searchHistory">Search History:
-    {searchHistory.map((prevSearch) => ' '+ prevSearch +' ')}
-    <input type="button" value="Clear"></input>
+const SearchHistory = ({searchHistory, clearHistory}) => (
+  <div className="searchHistory">
+      <span>Previous Searches: </span>
+        {searchHistory}
+      <button className="searchHistoryButton" value="Clear" onClick={clearHistory}>Clear</button>
   </div>
 );
 

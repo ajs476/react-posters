@@ -9,15 +9,17 @@ body{
 }
 
 .searchHistory{
-  color: white;
-  background: dodgerblue;
+  margin: 0 auto;
+  color: black;
+  background: lightgrey;
   padding: 4px;
   border-radius: 4px;
+  width: 50%;
+  border: 2px solid grey;
 }
 
-.searchHistory input{
+.searchHistoryButton {
   float: right;
-  padding: 4px;
 }
 
 .searchHistory:empty{

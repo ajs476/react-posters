@@ -18,7 +18,11 @@ class App extends React.Component {
     };
     this.updateInputValue = this.updateInputValue.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    localStorage.clear();
+    this.clearHistory = this.clearHistory.bind(this);
+  }
+
+  clearHistory() {
+    this.setState({searchHistory: []});
   }
 
   updateMovies(results) {
@@ -54,7 +58,10 @@ class App extends React.Component {
 
   handleSearch() {
     const {movies, inputValue, statusMessage, searchHistory} = this.state;
-    this.setState({searchHistory: [inputValue, ...searchHistory]});
+    if (searchHistory.length >= 10) {
+      searchHistory.pop();
+    }
+    this.setState({searchHistory: [` (${inputValue}) `, ...searchHistory]});
     this.setState({statusMessage: 'Loading'}, () => this.searchOMDB(inputValue));
   }
 
@@ -64,7 +71,7 @@ class App extends React.Component {
     <section className="container">
       <p className="statusMessage">{statusMessage}</p>
       <SearchBar updateInputValue={this.updateInputValue} onSearch={this.handleSearch} input={inputValue}/>
-      <SearchHistory searchHistory={searchHistory}/>
+      <SearchHistory searchHistory={searchHistory} clearHistory={this.clearHistory}/>
       <PosterList movieList={movies}/>
     </section>
   );
