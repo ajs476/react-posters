@@ -6,6 +6,7 @@ import SearchHistory from './components/SearchHistory';
 import posterData from './data/poster-data.json';
 const qhttp = require('q-io/http');
 
+const maxSearchHistory = 10;
 
 class App extends React.Component {
   constructor(props) {
@@ -58,7 +59,7 @@ class App extends React.Component {
 
   handleSearch() {
     const {movies, inputValue, statusMessage, searchHistory} = this.state;
-    if (searchHistory.length >= 10) {
+    if (searchHistory.length >= maxSearchHistory) {
       searchHistory.pop();
     }
     this.setState({searchHistory: [` (${inputValue}) `, ...searchHistory]});
