@@ -8,6 +8,19 @@ body{
   background-color: black;
 }
 
+.statusMessage{
+  color: white;
+  text-align: center;
+  padding: 4px;
+  background: red;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.statusMessage:empty {
+  padding: 0;
+}
+
 .container {
   margin: 0 auto;
   width: 90%;
