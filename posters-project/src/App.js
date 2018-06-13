@@ -6,7 +6,7 @@ import SearchHistory from './components/SearchHistory';
 import posterData from './data/poster-data.json';
 const qhttp = require('q-io/http');
 
-const maxSearchHistory = 10;
+const MAX_SEARCH_HISTORY = 10;
 
 class App extends React.Component {
   constructor(props) {
@@ -24,6 +24,13 @@ class App extends React.Component {
 
   clearHistory() {
     this.setState({searchHistory: []});
+  }
+
+  updateHistory(inputValue, searchHistory) {
+    if (searchHistory.length >= MAX_SEARCH_HISTORY) {
+      searchHistory.pop();
+    }
+    this.setState({searchHistory: [` (${inputValue}) `, ...searchHistory]});
   }
 
   updateMovies(results) {
@@ -58,11 +65,8 @@ class App extends React.Component {
   }
 
   handleSearch() {
-    const {movies, inputValue, statusMessage, searchHistory} = this.state;
-    if (searchHistory.length >= maxSearchHistory) {
-      searchHistory.pop();
-    }
-    this.setState({searchHistory: [` (${inputValue}) `, ...searchHistory]});
+    const {inputValue, searchHistory} = this.state;
+    this.updateHistory(inputValue, searchHistory);
     this.setState({statusMessage: 'Loading'}, () => this.searchOMDB(inputValue));
   }
 
