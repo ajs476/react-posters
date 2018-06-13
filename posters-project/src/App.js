@@ -15,6 +15,7 @@ class App extends React.Component {
       statusMessage: '',
     };
     this.updateInputValue = this.updateInputValue.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   updateMovies(results) {
@@ -48,12 +49,17 @@ class App extends React.Component {
     .catch((error) => this.setState({statusMessage: 'Error: Something went wrong. Please try again later.'}));
   }
 
+  handleSearch() {
+    const {movies, inputValue, statusMessage} = this.state;
+    this.setState({statusMessage: 'Loading'}, () => this.searchOMDB(inputValue));
+  }
+
   render() {
     const {movies, inputValue, statusMessage} = this.state;
     return (
     <section className="container">
       <p className="statusMessage">{statusMessage}</p>
-      <SearchBar updateInputValue={this.updateInputValue} onSearch={() => this.searchOMDB(inputValue)} input={inputValue}/>
+      <SearchBar updateInputValue={this.updateInputValue} onSearch={this.handleSearch} input={inputValue}/>
       <PosterList movieList={movies}/>
     </section>
   );
