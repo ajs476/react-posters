@@ -53,7 +53,7 @@ class App extends React.Component {
       this.setState({statusMessage: 'Error: Search term required'});
       return;
     }
-    qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
+    qhttp.read(`https://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
     .then((results) => {
       let omdbResult = JSON.parse(results);
       if (omdbResult.Response === 'False') {
