@@ -1,7 +1,17 @@
 import React from 'react';
 import SearchHistory from './SearchHistory.js';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
+
+let testHistoryItems = [['title', 'genre', 'posterImageURL', 'userImageURL'], ['title', 'genre', 'posterImageURL', 'userImageURL']];
+
 
 it('renders without crashing', () => { // eslint-disable-line no-undef
-  shallow(<SearchHistory searchHistory={['testItem, testItem']}/>);
+  shallow(<SearchHistory searchHistory={testHistoryItems}/>);
+});
+
+it('calls onClick event on click of clear button', () =>{ // eslint-disable-line no-undef
+  const onClick = jest.fn(); // eslint-disable-line no-undef
+  let wrapper = mount(<SearchHistory searchHistory={testHistoryItems} clearHistory={onClick}/>);
+  wrapper.find('button.searchHistoryButton').simulate('click');
+  expect(onClick).toBeCalled(); // eslint-disable-line no-undef
 });
