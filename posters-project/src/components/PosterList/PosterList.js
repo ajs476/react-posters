@@ -1,5 +1,5 @@
 import React from 'react';
-import Poster from './Poster.js';
+import Poster from '../Poster/Poster.js';
 
 
 const PosterList = ({movieList}) => (

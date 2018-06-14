@@ -1,8 +1,8 @@
 import React from 'react';
-import PosterList from './components/PosterList.js';
-import SearchBar from './components/SearchBar.js';
-import Poster from './components/Poster.js';
-import SearchHistory from './components/SearchHistory';
+import PosterList from './components/PosterList/PosterList.js';
+import SearchBar from './components/SearchBar/SearchBar.js';
+import Poster from './components/Poster/Poster.js';
+import SearchHistory from './components/SearchHistory/SearchHistory';
 import posterData from './data/poster-data.json';
 const qhttp = require('q-io/http');
 
@@ -53,7 +53,7 @@ class App extends React.Component {
       this.setState({statusMessage: 'Error: Search term required'});
       return;
     }
-    qhttp.read(`http://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
+    qhttp.read(`https://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
     .then((results) => {
       let omdbResult = JSON.parse(results);
       if (omdbResult.Response === 'False') {
