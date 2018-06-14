@@ -19,6 +19,7 @@ class App extends React.Component {
     };
     this.updateInputValue = this.updateInputValue.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.visitHistory = this.visitHistory.bind(this);
     this.clearHistory = this.clearHistory.bind(this);
   }
 
@@ -34,7 +35,7 @@ class App extends React.Component {
 
   updateHistory(inputValue, searchHistory) {
     this.manageHistoryLength(inputValue, searchHistory);
-    this.setState({searchHistory: [` (${inputValue}) `, ...searchHistory]});
+    this.setState({searchHistory: [`(${inputValue})`, ...searchHistory]});
   }
 
   updateMovies(results) {
@@ -73,13 +74,17 @@ class App extends React.Component {
     this.setState({statusMessage: 'Loading'}, () => this.searchOMDB(inputValue));
   }
 
+  visitHistory(historyLink) {
+    this.setState({statusMessage: 'Loading'}, () => this.searchOMDB(historyLink));
+  }
+
   render() {
     const {movies, inputValue, statusMessage, searchHistory} = this.state;
     return (
     <section className="container">
       <p className="statusMessage">{statusMessage}</p>
       <SearchBar updateInputValue={this.updateInputValue} onSearch={this.handleSearch} input={inputValue}/>
-      <SearchHistory searchHistory={searchHistory} clearHistory={this.clearHistory}/>
+      <SearchHistory searchHistory={searchHistory} clearHistory={this.clearHistory} visitHistory={this.visitHistory}/>
       <PosterList movieList={movies}/>
     </section>
   );

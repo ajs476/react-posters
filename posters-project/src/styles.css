@@ -26,6 +26,10 @@ body{
   padding: 0;
 }
 
+.historyLink {
+  text-decoration: underline;
+}
+
 .statusMessage{
   color: white;
   text-align: center;
