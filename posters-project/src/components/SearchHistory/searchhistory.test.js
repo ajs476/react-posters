@@ -4,7 +4,6 @@ import {shallow, mount} from 'enzyme';
 
 let testHistoryItems = [['title', 'genre', 'posterImageURL', 'userImageURL'], ['title', 'genre', 'posterImageURL', 'userImageURL']];
 
-
 it('renders without crashing', () => {
   shallow(<SearchHistory searchHistory={testHistoryItems}/>);
 });
