@@ -12,3 +12,10 @@ it('calls onChange event when searchBar is changed', () => {
   wrapper.find('input.movieSearchBox').simulate('change');
   expect(onChange).toBeCalled();
 });
+
+it('calls onClick event on click of search button', () => {
+  const onClick = jest.fn();
+  let wrapper = mount(<SearchBar onSearch={onClick}/>);
+  wrapper.find('button.movieSearchButton').simulate('click');
+  expect(onClick).toBeCalled();
+});
