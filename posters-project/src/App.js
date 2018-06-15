@@ -28,14 +28,14 @@ class App extends React.Component {
     this.setState({searchHistory: []});
   }
 
-  manageHistoryLength(inputValue, searchHistory) {
+  manageHistoryLength(searchHistory) {
     if (searchHistory.length >= MAX_SEARCH_HISTORY) {
       searchHistory.pop();
     }
   }
 
   updateHistory(inputValue, searchHistory) {
-    this.manageHistoryLength(inputValue, searchHistory);
+    this.manageHistoryLength(searchHistory);
     this.setState({searchHistory: [`(${inputValue})`, ...searchHistory]});
   }
 
