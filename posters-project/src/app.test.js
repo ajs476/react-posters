@@ -15,3 +15,15 @@ it('searchHistory state is cleared when clearHistory method is called', () => {
   wrapper.instance().clearHistory();
   expect(wrapper.state('searchHistory')).toEqual([]);
 });
+
+it('pops the last item from the array if the length is greater than or equal to MAX_SEARCH_HISTORY', () => {
+  let wrapper = mount(<App />);
+  const MAX_SEARCH_HISTORY = 10;
+  let testHistoryState = {
+    searchHistory: ['history1', 'history2', 'history3', 'history4', 'history5',
+     'history6', 'history7', 'history8', 'history9', 'history10', 'history11'],
+  };
+  wrapper.setState(testHistoryState);
+  wrapper.instance().manageHistoryLength((wrapper.state('searchHistory')));
+  expect(wrapper.state('searchHistory').length).toBe(MAX_SEARCH_HISTORY);
+});
