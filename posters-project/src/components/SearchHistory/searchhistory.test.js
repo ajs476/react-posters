@@ -14,3 +14,10 @@ it('calls onClick event on click of clear button', () => {
   wrapper.find('button.searchHistoryButton').simulate('click');
   expect(onClick).toBeCalled();
 });
+
+it('calls onClick event on click of history link', () => {
+  const onClick = jest.fn();
+  let wrapper = mount(<SearchHistory visitHistory={onClick} searchHistory={testHistoryItems} clearHistory={onClick}/>);
+  wrapper.find('span.historyLink').first().simulate('click');
+  expect(onClick).toBeCalled();
+});
