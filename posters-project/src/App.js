@@ -7,6 +7,7 @@ import posterData from './data/poster-data.json';
 const qhttp = require('q-io/http');
 
 const MAX_SEARCH_HISTORY = 10;
+const SEARCH_URL = 'https://www.omdbapi.com/?apikey=fd86ad97&s=';
 
 class App extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class App extends React.Component {
       this.setState({statusMessage: 'Error: Search term required'});
       return;
     }
-    qhttp.read(`https://www.omdbapi.com/?apikey=fd86ad97&s=${searchTitle}`)
+    qhttp.read(`${SEARCH_URL}${searchTitle}`)
     .then((results) => {
       let omdbResult = JSON.parse(results);
       if (omdbResult.Response === 'False') {
