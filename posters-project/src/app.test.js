@@ -4,6 +4,9 @@ import PosterList from './components/PosterList/PosterList.js';
 import SearchBar from './components/SearchBar/SearchBar.js';
 import SearchHistory from './components/SearchHistory/SearchHistory.js';
 import {shallow, mount} from 'enzyme';
+import appConstants from './constants.js';
+
+const {MAX_SEARCH_HISTORY} = appConstants;
 
 it('renders without crashing', () => {
   shallow(<App />);
@@ -28,7 +31,6 @@ it('clears searchHistory array when clearHistory method is called', () => {
 
 it('removes the last item from the array if the array length is greater than or equal to MAX_SEARCH_HISTORY', () => {
   let wrapper = mount(<App />);
-  const MAX_SEARCH_HISTORY = 10;
   let testHistoryState = {
     searchHistory: ['history1', 'history2', 'history3', 'history4', 'history5',
      'history6', 'history7', 'history8', 'history9', 'history10', 'history11'],
