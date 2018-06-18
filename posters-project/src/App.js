@@ -4,10 +4,10 @@ import SearchBar from './components/SearchBar/SearchBar.js';
 import Poster from './components/Poster/Poster.js';
 import SearchHistory from './components/SearchHistory/SearchHistory';
 import posterData from './data/poster-data.json';
+import appConstants from './constants.js';
 const qhttp = require('q-io/http');
 
-const MAX_SEARCH_HISTORY = 10;
-const SEARCH_URL = 'https://www.omdbapi.com/?apikey=fd86ad97&s=';
+const {SEARCH_URL, MAX_SEARCH_HISTORY} = appConstants;
 
 class App extends React.Component {
   constructor(props) {
@@ -28,14 +28,14 @@ class App extends React.Component {
     this.setState({searchHistory: []});
   }
 
-  manageHistoryLength(inputValue, searchHistory) {
+  manageHistoryLength(searchHistory) {
     if (searchHistory.length >= MAX_SEARCH_HISTORY) {
       searchHistory.pop();
     }
   }
 
   updateHistory(inputValue, searchHistory) {
-    this.manageHistoryLength(inputValue, searchHistory);
+    this.manageHistoryLength(searchHistory);
     this.setState({searchHistory: [`(${inputValue})`, ...searchHistory]});
   }
 
