@@ -18,6 +18,10 @@ body{
   border: 2px solid grey;
 }
 
+.media-item {
+  margin-bottom: 50px;
+}
+
 .searchHistoryButton {
   float: right;
 }
@@ -28,6 +32,11 @@ body{
 
 .historyLink {
   text-decoration: underline;
+}
+
+.historyLink:hover {
+  color: blue;
+  cursor: pointer;
 }
 
 .statusMessage{
